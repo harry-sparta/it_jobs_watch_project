@@ -10,10 +10,10 @@ packaging==19.1
 pluggy==0.13.1
 py==1.8.0
 pyparsing==2.4.2
-pytest==5.3.4
+pytest==5.1.0
 requests==2.22.0
-six==1.12.0e
+six==1.12.0
 soupsieve==1.9.2
-urllib3==1.25.7
-wcwidth==0.1.8
+urllib3==1.25.3
+wcwidth==0.1.7
 zipp==0.5.2

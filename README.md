@@ -10,3 +10,8 @@ vagrant
 
 ## Provisioning
 Cookbooks in It_Jobs_Watch_Cookbook
+
+
+## Blockers
+Vagrant syncs the folders to default location instead of user specified location (/home/ubuntu)
+It gets created in (/vagrant)

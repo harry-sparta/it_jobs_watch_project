@@ -20,3 +20,9 @@ end
 apt_package 'python3-pip' do
   action :install
 end
+
+# install python required modules
+python 'requirements' do
+  command "pip install -r --no-index ~/code/eng_48_devops/week_4/it_jobs_watch_project/development"
+  action :run
+end

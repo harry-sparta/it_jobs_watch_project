@@ -9,31 +9,13 @@ required_plugins.each do |plugin|
   end
 end
 
-
-
-# def set_env vars
-#   command = <<~HEREDOC
-#       echo "Setting Environment Variables"
-#       source ~/.bashrc
-#   HEREDOC
-#
-#   vars.each do |key, value|
-#     command += <<~HEREDOC
-#       if [ -z "$#{key}" ]; then
-#           echo "export #{key}=#{value}" >> ~/.bashrc
-#       fi
-#     HEREDOC
-#   end
-#
-#   return command
-# end
-
+# Vagrant VMs
 Vagrant.configure("2") do |config|
-  config.vm.define "code" do |code|
+  config.vm.define "app" do |app|
     app.vm.box = "ubuntu/bionic64"
-    
-    # app.vm.network "private_network", ip: "192.168.10.100"
-    # app.hostsupdater.aliases = ["development.local"]
+    app.vm.network "private_network", ip: "192.168.10.100"
+    app.hostsupdater.aliases = ["development.local"]
+    # app.vm.provision
     # app.vm.synced_folder "app", "/home/ubuntu/app"
     # app.vm.synced_folder "environment/app", "/home/ubuntu/environment/app"
     # app.vm.provision "shell", path: "environment/app/provision.sh", privileged: false

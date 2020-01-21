@@ -23,12 +23,13 @@ end
 
 # install python required modules on the requirements
 execute 'requirements.txt' do
-  command 'sudo pip3 install -r /vagrant/development/requirements.txt'
+  command 'sudo -H pip3 install -r /home/ubuntu/development/requirements.txt'
   action :run
 end
 
-# creates a 'Downloads' file in /home/vagrant to pass tests and store csv file
-execute 'mkdir_Downloads' do
-  command 'sudo mkdir /home/vagrant/Downloads'
-  action :run
+# creates a 'Downloads' file in '~/' i.e. /home/vagrant/
+directory 'Downloads' do
+  mode '0777'
+  path 'home/ubuntu/Downloads'
+  action :create
 end

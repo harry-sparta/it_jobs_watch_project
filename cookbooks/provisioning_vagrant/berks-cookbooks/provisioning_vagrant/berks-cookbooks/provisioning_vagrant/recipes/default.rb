@@ -28,8 +28,7 @@ execute 'requirements.txt' do
 end
 
 # creates a 'Downloads' file in '~/' i.e. /home/vagrant/
-directory 'Downloads' do
-  mode '0777'
-  path 'home/ubuntu/Downloads'
-  action :create
+execute 'mkdir_Downloads' do
+  command 'sudo -H mkdir ~/Downloads'
+  action :run
 end

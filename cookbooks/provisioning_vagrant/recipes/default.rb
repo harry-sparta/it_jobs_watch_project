@@ -23,6 +23,6 @@ end
 
 # install python required modules
 python 'requirements' do
-  command "pip install -r --no-index ~/code/eng_48_devops/week_4/it_jobs_watch_project/development"
+  command "pip install -r ~/code/eng_48_devops/week_4/it_jobs_watch_project/development/requirements.txt"
   action :run
 end

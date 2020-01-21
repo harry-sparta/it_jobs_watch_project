@@ -15,15 +15,14 @@ describe 'provisioning_vagrant::default' do
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
-  end
 
-  context 'When all attributes are default, on CentOS 7' do
-    # for a complete list of available platforms and versions see:
-    # https://github.com/chefspec/fauxhai/blob/master/PLATFORMS.md
-    platform 'centos', '7'
-
-    it 'converges successfully' do
-      expect { chef_run }.to_not raise_error
+    it'should install python3' do
+      expect(chef_run).to install_package 'python3'
     end
+
+    it'should install python3-pip' do
+      expect(chef_run).to install_package 'python3-pip'
+    end
+
   end
 end

@@ -21,15 +21,30 @@ apt_package 'python3-pip' do
   action :install
 end
 
-# install python required modules on the requirements
-execute 'requirements.txt' do
-  command 'sudo -H pip3 install -r /home/ubuntu/development/requirements.txt'
-  action :run
-end
-
-# creates a 'Downloads' file in '~/' i.e. /home/vagrant/
+# creates a 'Downloads' folder
 directory 'Downloads' do
   mode '0777'
   path 'home/ubuntu/Downloads'
   action :create
+end
+
+# creates a 'development' folder
+directory 'development' do
+  mode '0777'
+  path 'home/ubuntu/development'
+  action :create
+end
+
+# remote creates requirement.txt file from a copy in file/default/
+template 'requirements.txt' do
+  mode '0777'
+  source 'requirements.txt.erb'
+  path '/home/ubuntu/development/requirements.txt'
+  action :create
+end
+
+# install python required modules on the requirements
+execute 'requirements.txt' do
+  command 'sudo -H pip3 install -r /home/ubuntu/development/requirements.txt'
+  action :run
 end

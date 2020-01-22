@@ -23,3 +23,4 @@ Otherwise it will generate berks-cookbooks inside berks-cookbooks each berks ins
 
 # Github trigger tests
 test 1
+test 2

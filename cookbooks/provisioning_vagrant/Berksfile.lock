@@ -1,0 +1,7 @@
+DEPENDENCIES
+  provisioning_vagrant
+    path: .
+    metadata: true
+
+GRAPH
+  provisioning_vagrant (0.1.0)

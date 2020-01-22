@@ -20,3 +20,6 @@ It gets created in (/vagrant)
 ## Berks-Cookbooks
 any variation to the main cookbook files will need to delete the berks-cookbooks and reinstall (berks install -> berks vendor).
 Otherwise it will generate berks-cookbooks inside berks-cookbooks each berks install ran.
+
+# Github trigger tests
+test 1

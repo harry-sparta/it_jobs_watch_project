@@ -6,7 +6,7 @@
     },
     "builders": [
         {
-            "ami_name": "harry-li-eng48-python3-packer-itjobswatch{{timestamp}}",
+            "ami_name": "harry-li-eng48-python3-packer-chef-itjobswatch{{timestamp}}",
             "instance_type": "t2.micro",
 
             "region": "eu-west-1",

@@ -35,9 +35,9 @@ Python code (development) -> Github -> Jenkins -> EC2 slave node (Testing) -> Je
                           -> Localhost (Vagrant)
 ````
 
-## Blockers
-Vagrant syncs the folders to default location instead of user specified location (/home/ubuntu)
-It gets created in (/vagrant)
+## Creating slave node for Jenkins
+ensure jenkins home directory is */jenkins on the slave node (agent). So that it can be accessed from the master without authentication errors to occurs frequently.
+Also to add a user via ssh with */jenkins as home directory on the agent. To avoid further authentication errors, use jenkins as the user name.
 
 
 ## Berks-Cookbooks

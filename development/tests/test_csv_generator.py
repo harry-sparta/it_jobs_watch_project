@@ -39,7 +39,7 @@ class TestCSVGenerator:
         csv_generator_object = Top30CSVGenerator()
         csv_generator_object.generate_top_30_csv(generate_top_30_html_object.get_top_30_table_elements_into_array())
         yield self.create_top_30_using_default_location_and_default_name
-        os.remove(os.path.expanduser('~/Downloads/') + 'ItJobsWatchTop30.csv')
+        os.remove(os.path.expanduser('/home/ubuntu/Downloads/') + 'ItJobsWatchTop30.csv')
 
     # testing csv generation based on giving the top 30 CSV Generator a defined path
     def test_csv_without_headers(self):

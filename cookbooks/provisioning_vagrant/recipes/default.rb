@@ -48,3 +48,11 @@ execute 'requirements.txt' do
   command 'sudo -H pip3 install -r /home/ubuntu/development/requirements.txt'
   action :run
 end
+
+# install java to allow jenkins to connect to it
+execute 'java_install' do
+  command 'sudo apt-get install default-jdk'
+  action :run
+end
+
+#

@@ -21,6 +21,16 @@ apt_package 'python3-pip' do
   action :install
 end
 
+# installing packer
+apt_package 'packer' do
+  action :install
+end
+
+# install java to allow jenkins to connect to it
+apt_package 'default-jdk' do
+  action :install
+end
+
 # creates a 'Downloads' folder
 directory 'Downloads' do
   mode '0777'
@@ -48,11 +58,3 @@ execute 'requirements.txt' do
   command 'sudo -H pip3 install -r /home/ubuntu/development/requirements.txt'
   action :run
 end
-
-# install java to allow jenkins to connect to it
-execute 'java_install' do
-  command 'sudo apt-get install default-jdk'
-  action :run
-end
-
-#

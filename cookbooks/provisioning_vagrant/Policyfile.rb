@@ -10,7 +10,7 @@ name 'provisioning_vagrant'
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'provisioning_vagrant::default'
+run_list 'provisioning_vagrant::default'  # recipe 1 (testing env)- python, pip, python packages, packer, java, directories
 
 # Specify a custom source for a single cookbook:
 cookbook 'provisioning_vagrant', path: '.'

@@ -1,10 +1,8 @@
-#
 # Cookbook:: provisioning_vagrant
 # Recipe:: default
-#
 # Copyright:: 2020, The Authors, All Rights Reserved.
 
-
+# ---------------------------------APT PACKAGES--------------------------------
 # packages apt-get
 apt_update 'update_sources' do
   action :update
@@ -21,16 +19,22 @@ apt_package 'python3-pip' do
   action :install
 end
 
-# installing packer
-apt_package 'packer' do
-  action :install
-end
-
 # install java to allow jenkins to connect to it
 apt_package 'default-jdk' do
   action :install
 end
 
+# installing packer
+apt_package 'packer' do
+  action :install
+end
+
+# installing chef
+apt_package 'chef' do
+  action :install
+end
+
+# ---------------------------------DIRECTORIES--------------------------------
 # creates a 'Downloads' folder
 directory 'Downloads' do
   mode '0777'
@@ -45,6 +49,7 @@ directory 'development' do
   action :create
 end
 
+# ---------------------------------TEMPLATES--------------------------------
 # remote creates requirement.txt file from a copy in file/default/
 template 'requirements.txt' do
   mode '0777'
@@ -53,6 +58,7 @@ template 'requirements.txt' do
   action :create
 end
 
+# ---------------------------------REQUIRMENTS--------------------------------
 # install python required modules on the requirements
 execute 'requirements.txt' do
   command 'sudo -H pip3 install -r /home/ubuntu/development/requirements.txt'

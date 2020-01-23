@@ -39,7 +39,7 @@ class TestCSVGenerator:
         csv_generator_object = Top30CSVGenerator()
         csv_generator_object.generate_top_30_csv(generate_top_30_html_object.get_top_30_table_elements_into_array())
         yield self.create_top_30_using_default_location_and_default_name
-        os.remove(os.path.expanduser('~/Downloads/') + 'ItJobsWatchTop30.csv')
+        os.remove(os.path.expanduser('/home/ubuntu/Downloads/') + 'ItJobsWatchTop30.csv')
 
     # testing csv generation based on giving the top 30 CSV Generator a defined path
     def test_csv_without_headers(self):
@@ -49,7 +49,7 @@ class TestCSVGenerator:
             for line in parsed_csv_file:
                 list_count += 1
 
-        assert list_count == 60     # Changed to 60 for now (to include empty row that are generated between each item). was 30
+        assert list_count == 30
 
     def test_csv_with_headers(self):
         list_count = 0
@@ -58,13 +58,13 @@ class TestCSVGenerator:
             for line in parsed_csv_file:
                 list_count += 1
 
-        assert list_count == 62 # Changed to 60 for now (to include empty row that are generated between each item). was 31
+        assert list_count == 31
 
     def test_csv_without_headers_default_location(self):
         list_count = 0
-        with open(os.path.expanduser('~/Downloads/') + 'ItJobsWatchTop30.csv') as top_30_without_headers:
+        with open(os.path.expanduser('/home/ubuntu/Downloads/') + 'ItJobsWatchTop30.csv') as top_30_without_headers:
             parsed_csv_file = csv.reader(top_30_without_headers)
             for line in parsed_csv_file:
                 list_count += 1
 
-        assert list_count == 60 # Changed to 60 for now (to include empty row that are generated between each item). was 30
+        assert list_count == 30

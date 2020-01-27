@@ -36,7 +36,7 @@
             "type": "chef-solo",
             "execute_command": "{{if .Sudo}}sudo {{end}}chef-client --no-color -c {{.ConfigPath}} -j {{.JsonPath}} --chef-license accept-no-persist",
             "cookbook_paths": ["./berks-cookbooks"],
-            "run_list": ["provisioning_vagrant::default"],
+            "run_list": ["provisioning_vagrant::default"]
         },
         {
             "type": "file",

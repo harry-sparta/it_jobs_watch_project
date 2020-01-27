@@ -35,7 +35,8 @@
         {
             "type": "chef-solo",
             "cookbook_paths": ["./berks-cookbooks"],
-            "run_list": ["provisioning_vagrant::default"]
+            "run_list": ["provisioning_vagrant::default"],
+            "chef_license": "accept"
         },
         {
             "type": "file",

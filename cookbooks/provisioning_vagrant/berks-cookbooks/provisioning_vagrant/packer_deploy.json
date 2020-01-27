@@ -6,14 +6,14 @@
     },
     "builders": [
         {
-            "ami_name": "harry-li-eng48-python3-packer-chef-itjobswatch-depolyment{{timestamp}}",
+            "ami_name": "harry-li-eng48-python3-packer-chef-itjobswatch{{timestamp}}",
             "instance_type": "t2.micro",
 
             "region": "eu-west-1",
             "access_key": "{{user `aws_access_key`}}",
             "secret_key": "{{user `aws_secret_key`}}",
             "ssh_keypair_name": "harry-li-eng48-first-key",
-            "ssh_private_key_file": "~/.ssh/harry-li-eng48-first-key.pem",
+            "ssh_agent_auth": "true",,
 
             "subnet_id": "subnet-05f17c9de25b45b3a",
             "associate_public_ip_address": "true",
@@ -36,6 +36,11 @@
             "type": "chef-solo",
             "cookbook_paths": ["./berks-cookbooks"],
             "run_list": ["provisioning_vagrant::default"]
+        },
+        {
+            "type": "file",
+            "source": "../../development",
+            "destination": "/home/ubuntu/development"
         }
       ]
 }

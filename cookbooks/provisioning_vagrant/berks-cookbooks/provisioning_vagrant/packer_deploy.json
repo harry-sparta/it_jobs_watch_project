@@ -34,7 +34,7 @@
       "provisioners": [
         {
             "type": "chef-solo",
-            "execute_command": "--chef-license accept-no-persist",
+            "chef_license": "accept-no-persist"
             "cookbook_paths": ["./berks-cookbooks"],
             "run_list": ["provisioning_vagrant::default"]
         },

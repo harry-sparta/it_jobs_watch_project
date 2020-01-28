@@ -8,6 +8,12 @@ apt_update 'update_sources' do
   action :update
 end
 
+# package apt update done via shell - when above is not passed through e.g. python3 or pip3 install error...
+execute 'update_sources' do
+  command 'sudo apt-get update'
+  action :run
+end
+
 # install python3 package
 apt_package 'python3' do
   version '3.6*'

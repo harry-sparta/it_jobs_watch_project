@@ -40,7 +40,7 @@
         {
             "type": "file",
             "source": "../../development",
-            "destination": "/home/ubuntu/development"
+            "destination": "/home/ubuntu"
         }
       ]
 }

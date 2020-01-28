@@ -2,4 +2,6 @@
 
 TODO: Enter the cookbook description here.
 
-test..
+jenkin testing - failing at chef accept license - packer
+
+manual testing
